@@ -234,6 +234,9 @@ _data = {
 "no_attack": SubResource("Animation_hf03c")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_44xbu"]
+radius = 20.0
+
 [sub_resource type="Animation" id="Animation_usbbt"]
 length = 0.001
 tracks/0/type = "value"
@@ -413,9 +416,6 @@ _data = {
 "walk_up": SubResource("Animation_q7pvn")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_44xbu"]
-radius = 20.0
-
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 16
 motion_mode = 1
@@ -449,6 +449,16 @@ libraries = {
 }
 autoplay = "no_attack"
 
+[node name="AttackHurtBox" parent="Sprite2D" instance=ExtResource("10_2hnbx")]
+unique_name_in_owner = true
+position = Vector2(0, 36)
+collision_mask = 256
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/AttackHurtBox"]
+shape = SubResource("CircleShape2D_44xbu")
+debug_color = Color(0.800058, 0, 0.0692466, 0.42)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_2l0tv")
@@ -477,12 +487,3 @@ max_polyphony = 4
 
 [node name="Interactions" type="Node2D" parent="."]
 script = ExtResource("10_60dfh")
-
-[node name="HurtBox" parent="Interactions" instance=ExtResource("10_2hnbx")]
-position = Vector2(0, 16)
-collision_mask = 256
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HurtBox"]
-shape = SubResource("CircleShape2D_44xbu")
-debug_color = Color(0.800058, 0, 0.0692466, 0.42)
