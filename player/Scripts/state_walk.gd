@@ -1,7 +1,8 @@
-class_name State_walk extends State
+class_name State_Walk extends State
 
 @export var move_speed : float = 100.0
 @onready var idle : State = $"../Idle"
+@onready var attack : State = $"../Attack"
 
 ## whats happens when the player enters this state?
 func Enter() -> void:
@@ -29,4 +30,6 @@ func Physics(_delta : float ) -> State:
 		
 ## whats happens with input events in this state?
 func HandleInput(_event : InputEvent ) -> State:
-		return null
+	if _event.is_action_pressed("attack"):
+		return attack
+	return null
