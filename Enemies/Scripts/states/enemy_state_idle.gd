@@ -1,5 +1,6 @@
 class_name EnemyStateIdle extends EnemyState
 
+
 @export var anim_name : String = "idle"
 
 @export_category("AI")
@@ -9,6 +10,7 @@ class_name EnemyStateIdle extends EnemyState
 
 var _timer : float = 0.0
 
+
 ## What happens when we initialize this state?
 func init() -> void:
 	pass
@@ -17,8 +19,8 @@ func init() -> void:
 ## What happens when the enemy enters this State?
 func enter() -> void:
 	enemy.velocity = Vector2.ZERO
-	_timer = randf_range( state_duration_min , state_duration_max)
-	enemy.update_animation(anim_name)
+	_timer = randf_range( state_duration_min, state_duration_max )
+	enemy.update_animation( anim_name )
 	pass
 
 
@@ -38,3 +40,4 @@ func process( _delta : float ) -> EnemyState:
 ## What happens during the _physics_process update in this State?
 func physics( _delta : float ) -> EnemyState:
 	return null
+
