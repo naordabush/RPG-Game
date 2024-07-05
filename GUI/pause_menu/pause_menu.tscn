@@ -75,7 +75,6 @@ offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 10
-text = "This red drink restores your health! "
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -142,3 +141,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "      Load      "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+max_polyphony = 4

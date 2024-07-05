@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=7 format=3 uid="uid://se0k001v3524"]
+
+[ext_resource type="Script" path="res://Items/scripts/item_data.gd" id="1_tb8b2"]
+[ext_resource type="AudioStream" uid="uid://biw12prs7t0bl" path="res://Items/item_effects/hp-up.wav" id="1_ugc1g"]
+[ext_resource type="Script" path="res://Items/item_effects/item_effect_heal.gd" id="2_8i7mm"]
+[ext_resource type="Texture2D" uid="uid://ddupaxiohu7xr" path="res://Items/sprites/items.png" id="4_4h6ea"]
+
+[sub_resource type="Resource" id="Resource_g302l"]
+script = ExtResource("2_8i7mm")
+heal_amount = 1
+audio = ExtResource("1_ugc1g")
+use_description = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8man2"]
+atlas = ExtResource("4_4h6ea")
+region = Rect2(192, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_tb8b2")
+name = "Apple"
+description = "A delicious red apple!"
+texture = SubResource("AtlasTexture_8man2")
+effects = Array[Resource("res://Items/item_effects/item_effect.gd")]([SubResource("Resource_g302l")])
