@@ -57,4 +57,5 @@ func _on_animation_finished( _a : String ) -> void:
 func disable_hurt_box() -> void:
 	var hurt_box : HurtBox = enemy.get_node_or_null("HurtBox")
 	if hurt_box:
-		hurt_box.montoring = false
+		hurt_box.monitoring = false
+
